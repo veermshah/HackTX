@@ -4,7 +4,7 @@ import cv2
 import requests
 from pyzbar.pyzbar import decode
 import time
-import base64
+import os
 
 def BarcodeReader(image):
     img = cv2.imread(image)
@@ -95,7 +95,7 @@ def inventory():
 def suggestion():
     st.title("Recipe Suggester")
     if st.button("Suggest a Recipe"):
-        API_KEY = base64.b64decode("c2stRkUxY1JYNWtZY0k1U1hCTmxRZjBUM0JsYmtGSmVacWJGTklHSW83eXZBVGsxbHRR").decode("utf-8")
+        API_KEY = st.secrets["apikey"]
         openai.api_key = API_KEY
         
         ingredients = ""
