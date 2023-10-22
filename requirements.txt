@@ -1,4 +1,4 @@
 openai
-opencv-python
+opencv-python-headless
 requests
 pyzbar
